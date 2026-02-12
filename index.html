@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Varshini 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background: radial-gradient(circle at top,#e9d5ff,#c084fc,#9333ea);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+.moon{
+position:fixed;
+top:60px;
+right:40px;
+width:120px;
+height:120px;
+background:radial-gradient(circle,#fff,#e9d5ff,#c084fc);
+border-radius:50%;
+box-shadow:0 0 60px 20px rgba(255,255,255,0.6);
+animation:pulse 4s infinite alternate;
+}
+@keyframes pulse{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+.container{padding:40px 20px;}
+.glow{
+font-family:'Dancing Script',cursive;
+font-size:42px;
+animation:glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow{
+from{text-shadow:0 0 10px #fff;}
+to{text-shadow:0 0 30px #fff,0 0 50px #f0abfc;}
+}
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#9333ea;
+font-size:16px;
+margin-top:20px;
+cursor:pointer;
+transition:0.3s;
+}
+button:hover{transform:scale(1.1);}
+.hidden{display:none;}
+.gallery img{
+width:90%;
+max-width:280px;
+border-radius:20px;
+margin:10px;
+box-shadow:0 0 20px rgba(255,255,255,0.6);
+}
+#typing{
+margin-top:20px;
+font-size:18px;
+min-height:100px;
+}
+.heart{
+position:fixed;
+width:15px;
+height:15px;
+background:white;
+transform:rotate(45deg);
+animation:float 6s linear infinite;
+}
+.heart:before,
+.heart:after{
+content:'';
+position:absolute;
+width:15px;
+height:15px;
+background:white;
+border-radius:50%;
+}
+.heart:before{top:-7px;left:0;}
+.heart:after{left:-7px;top:0;}
+@keyframes float{
+0%{transform:translateY(0) rotate(45deg);opacity:1;}
+100%{transform:translateY(-800px) rotate(45deg);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<script>
+let password = prompt("Enter our secret code 💜");
+if(password !== "2316"){
+alert("Wrong code baby 😜");
+document.body.innerHTML="";
+}
+</script>
+
+<div class="moon"></div>
+
+<div class="container">
+
+<h1 class="glow">Varshini 💜</h1>
+
+<div id="typing"></div>
+
+<button onclick="showLove()">Open My Heart 💌</button>
+
+<div id="loveSection" class="hidden">
+
+<h2>Love Letter from Chandru 💜</h2>
+
+<p>
+Hi Darling💜, Just Small suprise to make you happy on this day😁,<br><br>
+I Hope this suprise makes you happy🙃. Thank you darling being there for me in all situations🙌,<br><br>
+Our Happy time is when we meet and talking more and teasing one on one🤗🫣,<br><br>
+our worst time is fighting and hurting one on one😂 I'm trying to stop these worst things also you too please support with me🫡<br><br>
+other than that don't worry for anything darling I'm always here to hold your hands forever🤝<br><br>
+we are stepping into 5th year happy valentine's day darling💜<br><br>
+I love you di😘😘😘😘😘
+</p>
+
+<h3>1 Reason I Love You 💖</h3>
+<p>Because you stand with me in every situation. That is my biggest strength 💜</p>
+
+<h2>Will You Be Mine Forever? 💍</h2>
+<button onclick="yesLove()">Yes 💜</button>
+<button id="noBtn" onmouseover="moveNo()">No 😜</button>
+
+<div id="finalMessage" class="hidden">
+<h1 class="glow">Happy Valentine's Day My Forever 💜</h1>
+</div>
+
+<div id="secretMessage" class="hidden" style="margin-top:20px;opacity:0;transition:2s;">
+<h3>Only For You Varshini 💜</h3>
+<p>
+No matter how many fights we have,<br>
+no matter how many misunderstandings come,<br>
+I will never leave your hand 🤝<br><br>
+You are my future, my wife, my forever dream 🌙<br><br>
+Chandru belongs only to you. Always. 💜
+</p>
+</div>
+
+</div>
+</div>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b3c75.mp3?filename=romantic-ambient-piano-110624.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var text="You are my peace, my happiness, my forever Varshini 💜";
+var i=0;
+function typeWriter(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeWriter,50);
+}}
+typeWriter();
+
+function showLove(){
+document.getElementById("loveSection").classList.remove("hidden");
+}
+
+function yesLove(){
+document.getElementById("finalMessage").classList.remove("hidden");
+document.getElementById("secretMessage").classList.remove("hidden");
+setTimeout(()=>{
+document.getElementById("secretMessage").style.opacity="1";
+},300);
+for(let i=0;i<50;i++){
+let fire=document.createElement("div");
+fire.innerHTML="💜";
+fire.style.position="fixed";
+fire.style.left=Math.random()*window.innerWidth+"px";
+fire.style.top=Math.random()*window.innerHeight+"px";
+fire.style.fontSize="30px";
+document.body.appendChild(fire);
+setTimeout(()=>fire.remove(),2000);
+}
+}
+
+function moveNo(){
+var btn=document.getElementById("noBtn");
+btn.style.position="absolute";
+btn.style.top=Math.random()*300+"px";
+btn.style.left=Math.random()*300+"px";
+}
+
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.style.left=Math.random()*window.innerWidth+"px";
+heart.style.bottom="-20px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+</script>
+
+</body>
+</html>
