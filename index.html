@@ -16,23 +16,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-.moon{
-position:fixed;
-top:50px;
-right:30px;
-width:100px;
-height:100px;
-background:radial-gradient(circle,#fff,#f3e8ff,#d8b4fe);
-border-radius:50%;
-box-shadow:0 0 60px rgba(255,255,255,0.8);
-animation:pulse 4s infinite alternate;
-}
-
-@keyframes pulse{
-from{transform:scale(1);}
-to{transform:scale(1.1);}
-}
-
 .container{padding:40px 20px;}
 
 .glow{
@@ -79,14 +62,13 @@ box-shadow:0 0 20px rgba(255,255,255,0.6);
 </audio>
 
 <script>
+// PASSWORD PROTECTION
 let password = prompt("Enter our secret code 💜");
 if(password !== "2316"){
-alert("Wrong code baby 😜");
-document.body.innerHTML="";
+alert("Sorry darling 💜");
+document.body.innerHTML = "";
 }
 </script>
-
-<div class="moon"></div>
 
 <div class="container">
 
@@ -132,8 +114,7 @@ I love you di 😘😘😘😘😘
 
 function showLove(){
 document.getElementById("loveSection").classList.remove("hidden");
-var music = document.getElementById("bgMusic");
-music.play();
+document.getElementById("bgMusic").play();
 }
 
 function yesLove(){
@@ -147,7 +128,7 @@ setTimeout(()=>{
 secret.style.opacity="1";
 },300);
 
-// Fire emoji effect
+// Fire effect
 for(let i=0;i<40;i++){
 let fire=document.createElement("div");
 fire.innerHTML="💜💍";
@@ -159,17 +140,17 @@ document.body.appendChild(fire);
 setTimeout(()=>fire.remove(),2000);
 }
 
-// Add Spotify button
+// Spotify APP button (opens app, not Chrome)
 setTimeout(()=>{
 let btn=document.createElement("button");
 btn.innerHTML="💖 Play Our Special Song 🎵";
 btn.style.marginTop="30px";
 btn.onclick=function(){
-window.open("https://open.spotify.com/track/28pMkd9JEFnupyk4SnCTPn","_blank");
+window.location.href =
+"intent://open.spotify.com/track/28pMkd9JEFnupyk4SnCTPn#Intent;scheme=https;package=com.spotify.music;end";
 };
 secret.appendChild(btn);
 },1200);
-
 }
 
 function moveNo(){
@@ -178,7 +159,6 @@ btn.style.position="absolute";
 btn.style.top=Math.random()*300+"px";
 btn.style.left=Math.random()*300+"px";
 }
-
 </script>
 
 </body>
